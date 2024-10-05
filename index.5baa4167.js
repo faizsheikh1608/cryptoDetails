@@ -2971,7 +2971,7 @@ root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), 
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./component/Body":"5KCoL","react-dom/client":"lOjBx"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom/client":"lOjBx","./component/Body":"5KCoL"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -5858,253 +5858,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7422ead32dcc1e6b":"786KC"}],"5KCoL":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$aa99 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$aa99.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _rows = require("./Rows");
-var _rowsDefault = parcelHelpers.interopDefault(_rows);
-var _s = $RefreshSig$();
-const Body = ()=>{
-    _s();
-    const [details, setDetails] = (0, _react.useState)(null);
-    const [tempDetails, setTempDetails] = (0, _react.useState)(null);
-    const [searchValue, setSearchValue] = (0, _react.useState)(null);
-    (0, _react.useEffect)(()=>{
-        fetcData();
-    }, []);
-    const fetcData = async function() {
-        const data = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false ");
-        const json = await data.json();
-        console.log(json);
-        setDetails(json);
-        setTempDetails(json);
-    };
-    if (details === null) return;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "nav",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "search--bar",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                            type: "search",
-                            placeholder: "Search By Name Or Symbol",
-                            onChange: (e)=>{
-                                setSearchValue(e.target.value);
-                            },
-                            onKeyDown: (e)=>{
-                                if (e.key === "Enter") {
-                                    const temp = details.filter((curr)=>{
-                                        if (curr.name.toLowerCase().includes(searchValue.toLowerCase()) || curr.symbol.toLowerCase().includes(searchValue.toLowerCase())) return curr;
-                                    });
-                                    setTempDetails(temp);
-                                }
-                            }
-                        }, void 0, false, {
-                            fileName: "component/Body.js",
-                            lineNumber: 29,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "component/Body.js",
-                        lineNumber: 28,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "btn",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: ()=>{
-                                    const temp = [
-                                        ...details
-                                    ].sort((a, b)=>a.market_cap - b.market_cap);
-                                    setTempDetails(temp);
-                                },
-                                children: "Sort By Mkt cap"
-                            }, void 0, false, {
-                                fileName: "component/Body.js",
-                                lineNumber: 55,
-                                columnNumber: 11
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                onClick: ()=>{
-                                    const temp = [
-                                        ...details
-                                    ].sort((a, b)=>a.price_change_percentage_24h - b.price_change_percentage_24h);
-                                    setTempDetails(temp);
-                                },
-                                children: "Sort By Percentage"
-                            }, void 0, false, {
-                                fileName: "component/Body.js",
-                                lineNumber: 66,
-                                columnNumber: 11
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "component/Body.js",
-                        lineNumber: 54,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "component/Body.js",
-                lineNumber: 27,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowsDefault.default), {
-                    data: tempDetails
-                }, void 0, false, {
-                    fileName: "component/Body.js",
-                    lineNumber: 80,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "component/Body.js",
-                lineNumber: 79,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "component/Body.js",
-        lineNumber: 26,
-        columnNumber: 5
-    }, undefined);
-};
-_s(Body, "KwRRZgUU+H1qO9ti0DFYV9EaRns=");
-_c = Body;
-exports.default = Body;
-var _c;
-$RefreshReg$(_c, "Body");
-
-  $parcel$ReactRefreshHelpers$aa99.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./Rows":"ei2VI"}],"ei2VI":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$137a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$137a.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Rows = (props)=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("table", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tbody", {
-            children: props.data.map((curr)=>{
-                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                src: curr.image,
-                                alt: curr.name
-                            }, void 0, false, {
-                                fileName: "component/Rows.js",
-                                lineNumber: 9,
-                                columnNumber: 17
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "component/Rows.js",
-                            lineNumber: 8,
-                            columnNumber: 15
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
-                            children: curr.name
-                        }, void 0, false, {
-                            fileName: "component/Rows.js",
-                            lineNumber: 11,
-                            columnNumber: 15
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
-                            children: curr.symbol.toUpperCase()
-                        }, void 0, false, {
-                            fileName: "component/Rows.js",
-                            lineNumber: 13,
-                            columnNumber: 15
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
-                            children: [
-                                "$",
-                                curr.current_price
-                            ]
-                        }, void 0, true, {
-                            fileName: "component/Rows.js",
-                            lineNumber: 14,
-                            columnNumber: 15
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
-                            children: [
-                                "$",
-                                curr.total_volume.toLocaleString()
-                            ]
-                        }, void 0, true, {
-                            fileName: "component/Rows.js",
-                            lineNumber: 18,
-                            columnNumber: 15
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
-                            className: curr.price_change_percentage_24h > 0 ? "positive" : "negative",
-                            children: [
-                                curr.price_change_percentage_24h.toFixed(2),
-                                "%"
-                            ]
-                        }, void 0, true, {
-                            fileName: "component/Rows.js",
-                            lineNumber: 22,
-                            columnNumber: 15
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
-                            children: [
-                                "Mkt Cap",
-                                curr.market_cap.toLocaleString()
-                            ]
-                        }, void 0, true, {
-                            fileName: "component/Rows.js",
-                            lineNumber: 30,
-                            columnNumber: 15
-                        }, undefined)
-                    ]
-                }, curr.id, true, {
-                    fileName: "component/Rows.js",
-                    lineNumber: 7,
-                    columnNumber: 13
-                }, undefined);
-            })
-        }, void 0, false, {
-            fileName: "component/Rows.js",
-            lineNumber: 4,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "component/Rows.js",
-        lineNumber: 3,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Rows;
-exports.default = Rows;
-var _c;
-$RefreshReg$(_c, "Rows");
-
-  $parcel$ReactRefreshHelpers$137a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lOjBx":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"lOjBx":[function(require,module,exports) {
 "use strict";
 var m = require("aaccff5d309d9239");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
@@ -27628,6 +27382,252 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequireaab8")
+},{}],"5KCoL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$aa99 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$aa99.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _rows = require("./Rows");
+var _rowsDefault = parcelHelpers.interopDefault(_rows);
+var _s = $RefreshSig$();
+const Body = ()=>{
+    _s();
+    const [details, setDetails] = (0, _react.useState)(null);
+    const [tempDetails, setTempDetails] = (0, _react.useState)(null);
+    const [searchValue, setSearchValue] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        fetcData();
+    }, []);
+    const fetcData = async function() {
+        const data = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false ");
+        const json = await data.json();
+        console.log(json);
+        setDetails(json);
+        setTempDetails(json);
+    };
+    if (details === null) return;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "nav",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "search--bar",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            type: "search",
+                            placeholder: "Search By Name Or Symbol",
+                            onChange: (e)=>{
+                                setSearchValue(e.target.value);
+                            },
+                            onKeyDown: (e)=>{
+                                if (e.key === "Enter") {
+                                    const temp = details.filter((curr)=>{
+                                        if (curr.name.toLowerCase().includes(searchValue.toLowerCase()) || curr.symbol.toLowerCase().includes(searchValue.toLowerCase())) return curr;
+                                    });
+                                    setTempDetails(temp);
+                                }
+                            }
+                        }, void 0, false, {
+                            fileName: "component/Body.js",
+                            lineNumber: 29,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "component/Body.js",
+                        lineNumber: 28,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "btn",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: ()=>{
+                                    const temp = [
+                                        ...details
+                                    ].sort((a, b)=>a.market_cap - b.market_cap);
+                                    setTempDetails(temp);
+                                },
+                                children: "Sort By Mkt cap"
+                            }, void 0, false, {
+                                fileName: "component/Body.js",
+                                lineNumber: 55,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                onClick: ()=>{
+                                    const temp = [
+                                        ...details
+                                    ].sort((a, b)=>a.price_change_percentage_24h - b.price_change_percentage_24h);
+                                    setTempDetails(temp);
+                                },
+                                children: "Sort By Percentage"
+                            }, void 0, false, {
+                                fileName: "component/Body.js",
+                                lineNumber: 66,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "component/Body.js",
+                        lineNumber: 54,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "component/Body.js",
+                lineNumber: 27,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowsDefault.default), {
+                    data: tempDetails
+                }, void 0, false, {
+                    fileName: "component/Body.js",
+                    lineNumber: 80,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "component/Body.js",
+                lineNumber: 79,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "component/Body.js",
+        lineNumber: 26,
+        columnNumber: 5
+    }, undefined);
+};
+_s(Body, "KwRRZgUU+H1qO9ti0DFYV9EaRns=");
+_c = Body;
+exports.default = Body;
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$aa99.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Rows":"ei2VI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ei2VI":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$137a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$137a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const Rows = (props)=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("table", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tbody", {
+            children: props.data.map((curr)=>{
+                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("tr", {
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                src: curr.image,
+                                alt: curr.name
+                            }, void 0, false, {
+                                fileName: "component/Rows.js",
+                                lineNumber: 9,
+                                columnNumber: 17
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "component/Rows.js",
+                            lineNumber: 8,
+                            columnNumber: 15
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                            children: curr.name
+                        }, void 0, false, {
+                            fileName: "component/Rows.js",
+                            lineNumber: 11,
+                            columnNumber: 15
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                            children: curr.symbol.toUpperCase()
+                        }, void 0, false, {
+                            fileName: "component/Rows.js",
+                            lineNumber: 13,
+                            columnNumber: 15
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                            children: [
+                                "$",
+                                curr.current_price
+                            ]
+                        }, void 0, true, {
+                            fileName: "component/Rows.js",
+                            lineNumber: 14,
+                            columnNumber: 15
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                            children: [
+                                "$",
+                                curr.total_volume.toLocaleString()
+                            ]
+                        }, void 0, true, {
+                            fileName: "component/Rows.js",
+                            lineNumber: 18,
+                            columnNumber: 15
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                            className: curr.price_change_percentage_24h > 0 ? "positive" : "negative",
+                            children: [
+                                curr.price_change_percentage_24h.toFixed(2),
+                                "%"
+                            ]
+                        }, void 0, true, {
+                            fileName: "component/Rows.js",
+                            lineNumber: 22,
+                            columnNumber: 15
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("td", {
+                            children: [
+                                "Mkt Cap",
+                                curr.market_cap.toLocaleString()
+                            ]
+                        }, void 0, true, {
+                            fileName: "component/Rows.js",
+                            lineNumber: 30,
+                            columnNumber: 15
+                        }, undefined)
+                    ]
+                }, curr.id, true, {
+                    fileName: "component/Rows.js",
+                    lineNumber: 7,
+                    columnNumber: 13
+                }, undefined);
+            })
+        }, void 0, false, {
+            fileName: "component/Rows.js",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "component/Rows.js",
+        lineNumber: 3,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Rows;
+exports.default = Rows;
+var _c;
+$RefreshReg$(_c, "Rows");
+
+  $parcel$ReactRefreshHelpers$137a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["hPIHA","1xC6H","igcvL"], "igcvL", "parcelRequireaab8")
 
 //# sourceMappingURL=index.5baa4167.js.map
