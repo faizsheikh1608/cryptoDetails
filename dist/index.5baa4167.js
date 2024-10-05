@@ -2962,19 +2962,12 @@ var _bodyDefault = parcelHelpers.interopDefault(_body);
 const AppLayout = function() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "app--body",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Header, {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 8,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 9,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 8,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
         fileName: "app.js",
         lineNumber: 7,
         columnNumber: 5
@@ -2984,7 +2977,7 @@ _c = AppLayout;
 const root = (0, _clientDefault.default).createRoot(document.querySelector("#root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(AppLayout, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 16,
+    lineNumber: 15,
     columnNumber: 13
 }, undefined));
 var _c;

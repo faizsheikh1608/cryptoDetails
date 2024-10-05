@@ -2,7 +2,6 @@
   "name": "faiz",
   "version": "1.0.0",
   "description": "It's a crypto Details",
-  "homepage": "https://faizsheikh1608.github.io/cryptoDetails",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
