@@ -1,0 +1,34 @@
+{
+  "name": "faiz",
+  "version": "1.0.0",
+  "description": "It's a crypto Details",
+  "homepage": "https://faizsheikh1608.github.io/cryptoDetails",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faizsheikh1608/cryptoDetails.git"
+  },
+  "keywords": [
+    "1234"
+  ],
+  "author": "Faiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faizsheikh1608/cryptoDetails/issues"
+  },
+  "homepage": "https://github.com/faizsheikh1608/cryptoDetails#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
